@@ -155,7 +155,7 @@ This workshop introduces key database concepts and provides hands-on practice in
    - Generated sample data to simulate real-world scenarios using **SQL Insert Statements**.
    - Used scripts to automate bulk data insertion for large datasets.
 
-   **[Add Sample Data Insert Script Here]**
+   **[Add Sample Data Insert Script Here](stage_1/insertTables.sql)**
    *(Upload or link to the sample data insert scripts)*
 
 5. **Writing SQL Queries**:
