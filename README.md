@@ -141,10 +141,6 @@ This workshop introduces key database concepts and provides hands-on practice in
    
  images/erd/ERD.png  
 > ![add_image_to readme_with_relative_path](images/erd/ERD.png)
-
-images/erd/one.jpg
-> ![add_image_one.png](images/erd/one.jpg)
-
   
    *(Upload or link to the ERD image or file)*
 
@@ -152,7 +148,7 @@ images/erd/one.jpg
    - Translated the ERD into actual tables, defining columns, data types, primary keys, and foreign keys.
    - Utilized SQL commands for table creation.
 
-   **[Add Table Creation Code Here]**
+   **[Add Table Creation Code Here](stage_1/createTables.sql)**
    *(Provide or link to the SQL code used to create the tables)*
 
 4. **Generating Sample Data**:
