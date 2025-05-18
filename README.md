@@ -156,15 +156,17 @@ Main features include:
 ## 🧩 2. ERD Diagram
 
 > ![ERD](images/erd/ERD.png)
+
  **[ERD.erdplus](stage_1/ERD.erdplus)**
 
 ---
 
 ## 🗱 3. DSD Diagram
 
-> ![DSD](../step%201/DSD.erdplus)
+> ![ERD](images/erd/DSD.png)
 
-[Download DSD File](../step%201/DSD.erdplus)
+ **[ERD.erdplus](stage_1/DSD.erdplus)**
+
 
 ---
 
@@ -181,27 +183,34 @@ Main features include:
 
 We used three different methods for populating the database:
 
-### 📂 A. Data Import from Files
+### 📂 A. Mockaroo/csv
 
 * Imported `.csv` files using `COPY` or `\copy` via pgAdmin.
-* Files: [Revenue.csv](../step%201/Revenue.csv), [TaxReport.sql](../step%201/TaxReport.sql)
-* Folder: `step 1/DataImportFiles`
+* File: [Payment.csv](stage_1/mockarooFiles/csv)
+* Folder: `stage_1/mockarooFiles/csv/Payment.csv`
 
-### 🐍 B. Python Script (Programmatic Generation)
+### 🌐 B. Mockaroo/sql
+
+* Used Mockaroo to simulate realistic financial data.
+* Files included:
+-[TaxReport.sql](stage_1/mockarooFiles/sql/TaxReport.sql)
+-[Revenue.sql](stage_1/mockarooFiles/sql/Revenue.sql)
+-[The rest of the tables](stage_1/mockarooFiles/sql/insert_all_rest_data.sql)
+
+*Used Formulas in generating data on TaxReport Table:
+> ![ERD](stage_1/mockarooFiles/sql/report_date.png)
+> ![ERD](stage_1/mockarooFiles/sql/tax_amount.png)
+> ![ERD](stage_1/mockarooFiles/sql/tax_paid.png)
+> ![ERD](stage_1/mockarooFiles/sql/tax_year.png)
+
+
+* Folders: `stage_1/mockarooFiles/sql`
+
+### 🐍 C. Python Script (Programmatic Generation)
 
 * Used Python (`faker`, `random`, `datetime`) to generate `INSERT` scripts.
 * File: [insertTables.sql](../step%201/insertTables.sql)
 * Folder: `step 1/Programing`
-
-### 🌐 C. Mockaroo
-
-* Used Mockaroo to simulate realistic financial data.
-* Files included: \[FinancialAudit INSERTs], \[ExpenseTypes INSERTs]
-* Folder: `step 1/mockarooFiles`
-
-> ![Screenshot Python Insert](../images/screenshots/python_insert.png)
-> ![Screenshot Mockaroo](../images/screenshots/mockaroo_example.png)
-> ![Screenshot Import CSV](../images/screenshots/import_csv_pgadmin.png)
 
 ---
 
@@ -212,9 +221,11 @@ We used three different methods for populating the database:
 We used `pg_dump` inside the Docker container to export the database:
 
 ```bash
-docker exec -t my_postgres pg_dump -U postgres -d schedule_db -F c -f /backup/backup_2025-05-15.backup
+docker exec -t my_postgres pg_dump -U myuser -d mydatabase -F c -f /backup/backup_2025-05-15.backup
 docker cp my_postgres:/backup/backup_2025-05-15.backup "D:/projects/DBProject/backups"
 ```
+
+
 
 ### 🔹 Restore
 
@@ -229,7 +240,7 @@ pg_restore -U postgres -d restored_db /backup/backup_2025-05-15.backup
 > ![Screenshot Backup](../images/screenshots/backup_success.png)
 > ![Screenshot Restore](../images/screenshots/restore_success.png)
 
-Backup file: [backup\_2025-05-15.backup](../step%201/backup_2025-05-15.backup)
+Backup file: **[backup\_2025-05-15.backup](stage_1/backup_2025-05-15.backup)**
 
 ---
 
