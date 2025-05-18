@@ -155,9 +155,8 @@ Main features include:
 
 ## 🧩 2. ERD Diagram
 
-> ![ERD](../step%201/ERD.erdplus)
-
-[Download ERD File](../step%201/ERD.erdplus)
+> ![ERD](images/erd/ERD.png)
+ **[ERD.erdplus](stage_1/ERD.erdplus)**
 
 ---
 
