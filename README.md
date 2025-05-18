@@ -116,6 +116,126 @@ finding Host address:
      - Monitor database activity and performance.
 
 ---
+## 📎 Stage A Report – DBProject
+
+### 👩‍💻 Submitters:
+
+**Naomi Levy 342582715
+& 
+Brachi Tarkieltaub 325925626**
+
+**Unit**: Finance Department
+**System**: Accounting and Revenue Management System for a Transportation Company
+
+---
+
+## 📁 Table of Contents
+
+1. Introduction
+2. ERD Diagram
+3. DSD Diagram
+4. Design Decisions
+5. Data Insertion Methods
+6. Database Backup and Restore
+
+---
+
+## 📘 1. Introduction
+
+This system manages financial data for a transportation company. It stores information such as revenues, expenses, audit records, invoices, and tax reports. The system allows accounting staff to track transactions, perform analysis, and generate reports efficiently.
+
+Main features include:
+
+* Revenue and payment tracking
+* Recording financial audits
+* Storing categorized expenses
+* Invoice generation and linkage to payments
+
+---
+
+## 🧩 2. ERD Diagram
+
+> ![ERD](../step%201/ERD.erdplus)
+
+[Download ERD File](../step%201/ERD.erdplus)
+
+---
+
+## 🗱 3. DSD Diagram
+
+> ![DSD](../step%201/DSD.erdplus)
+
+[Download DSD File](../step%201/DSD.erdplus)
+
+---
+
+## 🧠 4. Design Decisions
+
+* Years are constrained between 2000–2030 to ensure validity in tax reports.
+* `ExpenseTypes` is limited to 15 defined categories to simplify reporting.
+* Surrogate primary keys (integers) were used for most entities for efficiency.
+* All foreign keys were explicitly enforced to ensure referential integrity.
+
+---
+
+## 📅 5. Data Insertion Methods
+
+We used three different methods for populating the database:
+
+### 📂 A. Data Import from Files
+
+* Imported `.csv` files using `COPY` or `\copy` via pgAdmin.
+* Files: [Revenue.csv](../step%201/Revenue.csv), [TaxReport.sql](../step%201/TaxReport.sql)
+* Folder: `step 1/DataImportFiles`
+
+### 🐍 B. Python Script (Programmatic Generation)
+
+* Used Python (`faker`, `random`, `datetime`) to generate `INSERT` scripts.
+* File: [insertTables.sql](../step%201/insertTables.sql)
+* Folder: `step 1/Programing`
+
+### 🌐 C. Mockaroo
+
+* Used Mockaroo to simulate realistic financial data.
+* Files included: \[FinancialAudit INSERTs], \[ExpenseTypes INSERTs]
+* Folder: `step 1/mockarooFiles`
+
+> ![Screenshot Python Insert](../images/screenshots/python_insert.png)
+> ![Screenshot Mockaroo](../images/screenshots/mockaroo_example.png)
+> ![Screenshot Import CSV](../images/screenshots/import_csv_pgadmin.png)
+
+---
+
+## 🛡️ 6. Database Backup and Restore
+
+### 🔹 Backup
+
+We used `pg_dump` inside the Docker container to export the database:
+
+```bash
+docker exec -t my_postgres pg_dump -U postgres -d schedule_db -F c -f /backup/backup_2025-05-15.backup
+docker cp my_postgres:/backup/backup_2025-05-15.backup "D:/projects/DBProject/backups"
+```
+
+### 🔹 Restore
+
+On another machine:
+
+```bash
+docker exec -it my_postgres_restore bash
+psql -U postgres -c "CREATE DATABASE restored_db;"
+pg_restore -U postgres -d restored_db /backup/backup_2025-05-15.backup
+```
+
+> ![Screenshot Backup](../images/screenshots/backup_success.png)
+> ![Screenshot Restore](../images/screenshots/restore_success.png)
+
+Backup file: [backup\_2025-05-15.backup](../step%201/backup_2025-05-15.backup)
+
+---
+
+
+---
 
 ## Workshop Outcomes
 
