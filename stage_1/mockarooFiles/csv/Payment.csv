@@ -1,0 +1,401 @@
+payment_id,payment_method,payment_date,source,amount,revenue_id
+1,Cash,02/08/2024,Travel Ticket,15.95,15
+2,Direct Debit,5/15/2018,Fine,210.05,364
+3,Other,07/05/2005,Travel Ticket,281.89,159
+4,Cash,11/17/2021,Sponsors,220.21,375
+5,Cash,10/25/2028,Fine,104.09,215
+6,Direct Debit,10/28/2022,Fine,303.24,84
+7,Credit Card,10/22/2010,Ads,15.31,184
+8,Other,4/28/2029,Private Service,44.49,371
+9,Other,6/16/2010,Fine,469.62,183
+10,Direct Debit,1/27/2000,Travel Ticket,110.17,358
+11,Cash,3/30/2026,Ads,380.57,300
+12,Other,04/01/2020,Fine,347.14,80
+13,Other,11/14/2003,Fine,237.2,256
+14,Direct Debit,8/22/2015,Sponsors,229.33,71
+15,Credit,05/06/2022,Fine,486.26,30
+16,Other,07/05/2019,Travel Ticket,59.45,220
+17,Direct Debit,4/22/2000,Travel Ticket,70.37,294
+18,Credit Card,3/24/2023,Fine,149.12,326
+19,Direct Debit,12/16/2020,Private Service,261.1,56
+20,Cash,12/07/2025,Travel Ticket,158.66,176
+21,Other,09/11/2009,Travel Ticket,390.83,65
+22,Credit,09/02/2023,Private Service,196.3,259
+23,Credit Card,12/11/2017,Fine,278.23,37
+24,Direct Debit,04/01/2005,Private Service,329.28,106
+25,Other,07/06/2029,Fine,253.17,53
+26,Cash,3/26/2023,Private Service,196.45,227
+27,Cash,2/17/2007,Ads,252.3,120
+28,Credit Card,12/30/2003,Travel Ticket,217.44,34
+29,Other,03/06/2029,Ads,348.12,217
+30,Credit Card,8/25/2012,Ads,193.84,187
+31,Credit Card,11/08/2018,Fine,299.97,291
+32,Cash,9/14/2004,Private Service,123.05,157
+33,Credit,4/13/2000,Sponsors,301.28,326
+34,Credit Card,5/21/2021,Private Service,473.39,246
+35,Cash,08/09/2003,Sponsors,414.35,333
+36,Credit Card,11/15/2022,Sponsors,219.8,225
+37,Direct Debit,06/09/2003,Travel Ticket,105.97,323
+38,Cash,5/17/2019,Ads,139.3,209
+39,Credit,09/12/2013,Sponsors,405.18,396
+40,Cash,02/06/2027,Ads,85.58,320
+41,Direct Debit,11/25/2020,Sponsors,426.41,339
+42,Credit Card,09/05/2010,Fine,392.04,213
+43,Other,04/03/2020,Fine,387.6,325
+44,Direct Debit,12/12/2001,Ads,104.9,63
+45,Cash,10/28/2013,Fine,373.96,351
+46,Credit,05/08/2022,Fine,25.6,17
+47,Other,9/26/2017,Fine,335,278
+48,Cash,2/20/2024,Ads,178.89,222
+49,Credit Card,10/30/2028,Travel Ticket,183.32,173
+50,Cash,4/13/2023,Travel Ticket,401.22,80
+51,Direct Debit,2/18/2028,Ads,148.87,44
+52,Cash,3/14/2016,Fine,89.67,271
+53,Direct Debit,6/22/2030,Ads,324.11,52
+54,Direct Debit,10/14/2030,Sponsors,338.15,270
+55,Credit,4/15/2017,Sponsors,321.46,60
+56,Direct Debit,7/13/2023,Ads,202.16,346
+57,Cash,11/28/2018,Fine,495.24,271
+58,Direct Debit,1/29/2008,Fine,51.31,135
+59,Direct Debit,09/06/2027,Fine,170.46,230
+60,Direct Debit,05/04/2015,Travel Ticket,12.2,305
+61,Direct Debit,10/13/2017,Ads,273.2,70
+62,Other,5/14/2022,Fine,396.26,197
+63,Credit,12/30/2028,Sponsors,459.25,381
+64,Credit,10/04/2003,Private Service,332.65,354
+65,Credit Card,6/19/2021,Private Service,390.06,391
+66,Credit,9/17/2030,Travel Ticket,235.03,320
+67,Cash,8/17/2020,Ads,207.37,382
+68,Credit,3/17/2021,Private Service,174.88,207
+69,Direct Debit,05/12/2005,Sponsors,198.23,145
+70,Cash,1/21/2005,Fine,52.18,397
+71,Direct Debit,06/05/2002,Ads,51.97,212
+72,Credit,09/05/2008,Travel Ticket,197.72,105
+73,Direct Debit,01/04/2022,Private Service,93.18,356
+74,Credit Card,11/28/2024,Private Service,167.16,59
+75,Other,08/09/2005,Sponsors,310.83,269
+76,Cash,02/07/2026,Travel Ticket,386.54,340
+77,Credit Card,06/12/2009,Travel Ticket,278.07,249
+78,Direct Debit,08/07/2028,Travel Ticket,168.49,132
+79,Cash,09/12/2008,Travel Ticket,223.07,68
+80,Other,08/07/2014,Fine,217.59,318
+81,Other,1/29/2007,Fine,134.61,57
+82,Direct Debit,2/26/2020,Fine,494.6,213
+83,Cash,4/26/2019,Ads,49.9,210
+84,Credit Card,1/16/2018,Ads,248.61,200
+85,Cash,10/24/2025,Private Service,499.25,103
+86,Other,11/03/2026,Ads,138.97,228
+87,Credit Card,02/05/2027,Sponsors,157.3,57
+88,Direct Debit,6/14/2001,Sponsors,102.34,167
+89,Credit Card,7/27/2008,Travel Ticket,485.64,131
+90,Other,12/04/2024,Sponsors,451.94,161
+91,Other,7/15/2018,Ads,435.78,76
+92,Credit Card,3/20/2008,Travel Ticket,305.53,220
+93,Other,07/04/2001,Private Service,497.27,121
+94,Credit,1/28/2028,Sponsors,427.87,398
+95,Cash,10/17/2002,Fine,114.49,36
+96,Direct Debit,10/13/2018,Fine,477.42,320
+97,Direct Debit,10/16/2027,Ads,476.09,35
+98,Credit,02/05/2025,Sponsors,117.97,125
+99,Credit Card,11/29/2010,Private Service,291.17,154
+100,Credit,8/26/2021,Travel Ticket,357.75,66
+101,Credit,05/05/2024,Ads,203.46,195
+102,Cash,12/25/2009,Fine,189.71,60
+103,Credit,11/19/2013,Travel Ticket,396.21,316
+104,Credit Card,06/09/2022,Sponsors,402.19,378
+105,Other,5/28/2007,Sponsors,426.25,341
+106,Credit,09/10/2014,Sponsors,290.37,200
+107,Credit,10/25/2002,Sponsors,339.75,292
+108,Credit,06/01/2029,Private Service,415.85,147
+109,Credit Card,06/06/2018,Travel Ticket,131.12,8
+110,Direct Debit,4/25/2012,Private Service,149.69,108
+111,Direct Debit,7/19/2001,Fine,181.46,249
+112,Credit Card,6/26/2026,Fine,309.39,45
+113,Credit,5/21/2013,Fine,82.76,188
+114,Direct Debit,05/06/2016,Sponsors,251.98,92
+115,Direct Debit,3/29/2025,Private Service,264.28,8
+116,Cash,7/20/2023,Ads,320,349
+117,Direct Debit,9/18/2029,Fine,27.99,378
+118,Other,10/08/2027,Fine,234.2,182
+119,Credit,3/28/2006,Fine,116.59,196
+120,Credit,9/22/2000,Ads,446.35,368
+121,Credit,01/07/2016,Private Service,376.19,298
+122,Other,6/24/2002,Sponsors,384.3,140
+123,Direct Debit,2/14/2030,Private Service,260.39,250
+124,Other,10/24/2019,Private Service,214.64,269
+125,Credit,06/06/2030,Fine,31.67,165
+126,Credit,9/22/2012,Sponsors,398.55,67
+127,Credit Card,5/17/2012,Private Service,273.22,238
+128,Direct Debit,10/22/2004,Ads,2.05,209
+129,Credit Card,08/04/2012,Fine,327.35,95
+130,Cash,2/27/2023,Sponsors,354.37,115
+131,Cash,1/13/2021,Travel Ticket,20.01,115
+132,Credit Card,09/06/2018,Private Service,113.74,242
+133,Credit Card,9/20/2008,Sponsors,183.53,147
+134,Credit,1/25/2001,Sponsors,449.78,293
+135,Direct Debit,1/15/2012,Travel Ticket,239.03,383
+136,Credit,5/16/2011,Travel Ticket,55.38,83
+137,Cash,10/04/2002,Fine,254.06,109
+138,Credit,4/25/2029,Private Service,458.55,262
+139,Other,06/02/2011,Fine,135.8,301
+140,Direct Debit,12/12/2011,Sponsors,122.41,370
+141,Cash,03/08/2018,Sponsors,377.71,243
+142,Credit,4/18/2009,Ads,198.77,367
+143,Direct Debit,5/29/2003,Travel Ticket,181.47,220
+144,Direct Debit,03/02/2005,Sponsors,351.39,343
+145,Direct Debit,7/22/2014,Fine,158.06,274
+146,Credit,4/23/2026,Ads,357.44,102
+147,Credit Card,07/02/2022,Sponsors,399.35,327
+148,Cash,12/05/2026,Ads,244.23,192
+149,Credit,11/03/2029,Fine,192.6,173
+150,Credit Card,01/10/2020,Ads,191.33,251
+151,Cash,03/03/2004,Fine,334.96,343
+152,Cash,05/08/2000,Fine,212.21,137
+153,Direct Debit,10/25/2011,Fine,24.35,55
+154,Credit Card,07/03/2001,Travel Ticket,19.38,393
+155,Other,06/07/2004,Private Service,190.97,277
+156,Cash,8/14/2005,Sponsors,102.27,368
+157,Other,5/21/2011,Travel Ticket,40.68,170
+158,Cash,2/22/2011,Ads,335.86,329
+159,Credit,10/01/2004,Sponsors,112.97,196
+160,Direct Debit,09/11/2002,Sponsors,291.85,36
+161,Credit,2/19/2025,Private Service,77.17,31
+162,Credit,12/23/2017,Sponsors,426.53,279
+163,Cash,11/18/2008,Fine,35.3,92
+164,Other,4/13/2008,Ads,355.98,111
+165,Credit,1/28/2005,Ads,437.84,286
+166,Other,7/19/2010,Sponsors,240.53,390
+167,Cash,5/27/2015,Sponsors,303.96,193
+168,Direct Debit,03/03/2019,Travel Ticket,271.6,169
+169,Direct Debit,7/21/2001,Fine,102.72,348
+170,Cash,8/19/2011,Sponsors,244.91,331
+171,Credit Card,5/17/2005,Private Service,382.36,23
+172,Other,12/07/2016,Sponsors,390.88,5
+173,Credit Card,9/27/2013,Fine,215.38,153
+174,Credit,1/18/2020,Fine,3.01,59
+175,Credit Card,01/05/2005,Private Service,80.87,245
+176,Credit Card,1/18/2002,Travel Ticket,54.57,256
+177,Credit,06/03/2018,Travel Ticket,301.74,178
+178,Other,11/29/2009,Ads,174.62,167
+179,Cash,10/04/2010,Fine,308.35,134
+180,Credit,03/08/2028,Ads,27.73,135
+181,Cash,04/02/2009,Travel Ticket,126.03,41
+182,Direct Debit,01/11/2024,Sponsors,152.62,5
+183,Other,07/02/2029,Ads,322.12,29
+184,Credit Card,01/01/2010,Travel Ticket,439.92,374
+185,Other,08/08/2010,Private Service,195.39,64
+186,Credit Card,07/10/2010,Fine,219.89,229
+187,Credit,4/30/2022,Fine,390.19,73
+188,Credit,1/28/2008,Sponsors,496.32,136
+189,Other,6/20/2018,Travel Ticket,368.2,227
+190,Cash,11/14/2002,Sponsors,281.78,300
+191,Cash,8/19/2004,Private Service,327.18,50
+192,Other,9/18/2000,Ads,291.5,43
+193,Credit,3/20/2021,Travel Ticket,86.34,386
+194,Credit Card,12/25/2006,Sponsors,31.78,255
+195,Credit Card,11/22/2007,Fine,48.74,169
+196,Other,3/16/2011,Travel Ticket,308.61,18
+197,Credit Card,8/21/2011,Travel Ticket,432.02,158
+198,Cash,4/24/2002,Sponsors,248.64,113
+199,Other,1/20/2010,Travel Ticket,462.17,115
+200,Credit,11/16/2022,Ads,340.1,99
+201,Other,11/25/2013,Fine,434.05,323
+202,Other,03/01/2009,Sponsors,497.25,206
+203,Direct Debit,1/13/2017,Sponsors,228.81,10
+204,Cash,09/09/2026,Private Service,405.04,203
+205,Other,07/09/2001,Private Service,188.04,55
+206,Other,01/01/2002,Fine,376.18,176
+207,Credit Card,2/14/2011,Travel Ticket,417.4,196
+208,Credit Card,7/21/2004,Ads,0.03,355
+209,Credit Card,06/01/2015,Fine,311.46,314
+210,Other,05/07/2004,Ads,63.65,186
+211,Other,1/18/2022,Travel Ticket,299.19,183
+212,Direct Debit,2/14/2019,Ads,303.32,386
+213,Credit Card,7/27/2022,Fine,264.54,85
+214,Cash,11/03/2023,Ads,315.98,375
+215,Direct Debit,03/06/2011,Ads,2.73,388
+216,Cash,1/22/2025,Sponsors,46.15,185
+217,Credit Card,2/19/2002,Sponsors,469.59,159
+218,Credit Card,10/15/2025,Travel Ticket,85.58,278
+219,Cash,11/05/2021,Private Service,16.67,399
+220,Credit Card,5/17/2004,Private Service,95.01,107
+221,Other,02/01/2013,Sponsors,168.37,351
+222,Direct Debit,5/28/2023,Fine,84.56,80
+223,Credit,4/22/2030,Ads,38.74,106
+224,Other,4/25/2000,Private Service,70,371
+225,Cash,12/10/2012,Ads,400.7,297
+226,Credit Card,7/27/2019,Private Service,111.22,304
+227,Credit,09/06/2022,Sponsors,259.03,2
+228,Other,05/10/2013,Ads,315.22,377
+229,Credit,02/09/2001,Private Service,497.08,304
+230,Direct Debit,04/12/2000,Ads,447.06,352
+231,Direct Debit,2/21/2026,Private Service,491.16,190
+232,Direct Debit,3/17/2006,Sponsors,391.98,42
+233,Direct Debit,1/25/2019,Fine,396.24,323
+234,Credit Card,7/22/2022,Private Service,87.52,260
+235,Credit Card,02/06/2023,Fine,363.96,57
+236,Cash,02/02/2020,Sponsors,278.15,12
+237,Credit,05/02/2002,Fine,394.37,244
+238,Credit Card,02/03/2003,Travel Ticket,130.07,309
+239,Other,05/06/2007,Travel Ticket,439.15,337
+240,Direct Debit,07/10/2000,Private Service,276.05,100
+241,Other,6/15/2001,Sponsors,370.53,232
+242,Credit Card,04/12/2020,Fine,155.92,165
+243,Credit Card,11/05/2005,Sponsors,88.97,371
+244,Direct Debit,4/23/2018,Ads,453.09,72
+245,Credit,5/23/2005,Sponsors,282.43,50
+246,Credit Card,9/21/2015,Travel Ticket,137.36,152
+247,Direct Debit,06/06/2015,Fine,390.59,134
+248,Credit,3/24/2000,Sponsors,199.65,195
+249,Other,10/08/2024,Fine,33.34,176
+250,Cash,3/18/2019,Ads,184.38,316
+251,Credit,1/30/2001,Fine,468.45,34
+252,Credit,6/22/2022,Ads,90.54,40
+253,Credit Card,06/07/2022,Fine,405.42,143
+254,Credit,7/21/2022,Fine,134.98,12
+255,Direct Debit,1/17/2029,Fine,135.97,234
+256,Credit Card,4/23/2027,Ads,371.98,196
+257,Direct Debit,9/24/2020,Ads,6.54,316
+258,Direct Debit,2/17/2012,Fine,130.65,38
+259,Credit Card,06/04/2002,Sponsors,420.63,199
+260,Credit Card,1/24/2012,Travel Ticket,137.99,84
+261,Credit,1/14/2004,Sponsors,398.9,43
+262,Cash,11/15/2007,Travel Ticket,447.35,264
+263,Cash,9/24/2019,Private Service,183.29,78
+264,Other,10/19/2005,Travel Ticket,100.27,246
+265,Cash,10/08/2008,Fine,451.87,383
+266,Credit Card,1/31/2004,Travel Ticket,94.58,254
+267,Credit Card,02/12/2004,Travel Ticket,169.48,52
+268,Credit Card,11/20/2022,Travel Ticket,252.8,334
+269,Cash,10/23/2002,Private Service,367.76,177
+270,Cash,12/17/2000,Sponsors,318.68,333
+271,Credit,10/06/2011,Fine,244.22,118
+272,Direct Debit,12/27/2007,Travel Ticket,118.17,16
+273,Direct Debit,1/13/2023,Ads,154,21
+274,Other,04/04/2003,Ads,434.01,376
+275,Cash,1/16/2007,Ads,1.08,346
+276,Credit Card,8/26/2005,Sponsors,196.78,58
+277,Credit,12/15/2002,Travel Ticket,270.66,32
+278,Credit Card,1/27/2024,Private Service,280.19,88
+279,Cash,10/26/2011,Sponsors,130.48,372
+280,Cash,5/22/2006,Travel Ticket,124.24,18
+281,Other,10/27/2010,Sponsors,424.9,25
+282,Cash,12/17/2004,Ads,97.44,388
+283,Credit,12/15/2011,Fine,435.01,385
+284,Credit,6/24/2014,Private Service,433.08,383
+285,Credit,07/07/2027,Travel Ticket,108.31,360
+286,Credit,10/14/2009,Ads,485.07,6
+287,Cash,10/19/2004,Travel Ticket,354.36,238
+288,Credit Card,5/25/2017,Sponsors,289.79,388
+289,Direct Debit,2/13/2018,Travel Ticket,135.64,119
+290,Direct Debit,6/30/2013,Ads,435.71,199
+291,Direct Debit,02/09/2009,Private Service,377.8,39
+292,Credit Card,04/07/2020,Travel Ticket,472.45,73
+293,Cash,06/07/2015,Travel Ticket,322.63,90
+294,Credit Card,01/07/2002,Ads,201.41,5
+295,Other,8/29/2030,Sponsors,468.63,7
+296,Credit Card,11/23/2017,Ads,88.94,168
+297,Other,2/20/2028,Fine,367.14,181
+298,Cash,08/01/2002,Private Service,248.31,351
+299,Cash,7/17/2017,Ads,71.04,260
+300,Credit,06/06/2017,Travel Ticket,478.86,372
+301,Credit Card,8/19/2007,Private Service,60.81,218
+302,Credit Card,5/29/2019,Sponsors,169.83,333
+303,Credit Card,2/25/2019,Sponsors,172.22,379
+304,Credit Card,12/27/2023,Fine,198.22,373
+305,Direct Debit,5/25/2028,Ads,419.78,384
+306,Other,5/19/2008,Fine,294.95,359
+307,Credit,11/09/2024,Sponsors,165.02,70
+308,Direct Debit,09/07/2013,Fine,448.04,140
+309,Other,9/17/2014,Travel Ticket,113.9,239
+310,Credit Card,09/10/2013,Sponsors,237.48,174
+311,Direct Debit,12/19/2004,Ads,490.33,97
+312,Cash,4/13/2021,Travel Ticket,221.93,144
+313,Cash,07/05/2017,Travel Ticket,256.3,312
+314,Direct Debit,12/08/2009,Ads,297.14,160
+315,Cash,7/30/2018,Private Service,389.59,380
+316,Direct Debit,11/19/2001,Private Service,70.88,42
+317,Cash,2/16/2005,Private Service,290.23,74
+318,Other,6/29/2027,Sponsors,109.05,267
+319,Cash,10/30/2017,Sponsors,104.48,346
+320,Credit,4/16/2006,Fine,263.99,367
+321,Credit,10/17/2006,Sponsors,21.57,363
+322,Other,10/12/2007,Ads,376.87,137
+323,Credit Card,07/12/2001,Private Service,366.52,281
+324,Credit Card,9/19/2014,Ads,412.19,187
+325,Credit,05/04/2011,Ads,12.28,286
+326,Credit,06/07/2016,Ads,389.31,230
+327,Credit,4/25/2021,Private Service,338.19,88
+328,Credit Card,04/02/2004,Sponsors,42.72,179
+329,Cash,10/31/2029,Fine,80.99,183
+330,Direct Debit,2/14/2024,Travel Ticket,406.88,332
+331,Credit Card,5/20/2006,Private Service,241.74,292
+332,Credit,03/01/2027,Sponsors,15.83,335
+333,Credit Card,12/05/2023,Travel Ticket,197.04,191
+334,Direct Debit,5/28/2020,Fine,42.63,359
+335,Other,03/05/2008,Sponsors,149.12,70
+336,Credit Card,07/02/2002,Fine,215.31,93
+337,Cash,10/12/2029,Sponsors,496.43,192
+338,Credit Card,8/14/2018,Travel Ticket,249.08,46
+339,Credit,10/05/2015,Private Service,492.94,205
+340,Credit,12/02/2024,Fine,349.55,374
+341,Credit Card,7/14/2013,Sponsors,406.46,162
+342,Other,5/18/2014,Sponsors,224.25,212
+343,Direct Debit,03/05/2028,Fine,252.64,200
+344,Other,9/29/2022,Sponsors,219.33,333
+345,Other,02/04/2018,Travel Ticket,464.97,178
+346,Other,11/23/2025,Fine,8.37,243
+347,Cash,12/13/2007,Ads,198.44,74
+348,Credit,03/05/2022,Fine,406.62,258
+349,Credit Card,09/05/2019,Private Service,47.83,124
+350,Credit Card,4/14/2019,Fine,335.93,124
+351,Credit,6/29/2028,Private Service,224.85,3
+352,Credit,3/31/2030,Travel Ticket,134,126
+353,Direct Debit,03/09/2016,Private Service,204.46,208
+354,Credit Card,01/05/2027,Private Service,263.92,212
+355,Other,11/19/2009,Fine,112.81,337
+356,Direct Debit,11/28/2022,Private Service,56.23,193
+357,Direct Debit,8/16/2017,Ads,442.17,378
+358,Other,8/29/2025,Fine,137.88,33
+359,Other,8/23/2019,Sponsors,331.86,274
+360,Direct Debit,10/10/2007,Sponsors,416.27,332
+361,Cash,08/05/2005,Ads,424.15,35
+362,Credit,02/12/2000,Private Service,293.07,245
+363,Cash,10/25/2000,Ads,384.96,12
+364,Credit,9/15/2015,Travel Ticket,107.83,238
+365,Other,11/20/2019,Fine,275.25,328
+366,Credit Card,4/30/2007,Fine,73.95,37
+367,Cash,02/12/2007,Fine,155.02,384
+368,Direct Debit,08/05/2026,Travel Ticket,205.66,56
+369,Other,12/21/2003,Ads,193.6,211
+370,Credit,9/25/2023,Fine,81.54,272
+371,Other,07/03/2020,Travel Ticket,104.55,85
+372,Direct Debit,03/08/2011,Fine,440.64,331
+373,Direct Debit,08/04/2006,Private Service,99.63,209
+374,Credit Card,4/14/2012,Travel Ticket,80.45,216
+375,Credit,05/02/2000,Fine,323.51,111
+376,Direct Debit,12/31/2018,Ads,432.92,17
+377,Credit,04/10/2029,Private Service,486.05,320
+378,Other,01/01/2008,Sponsors,464.46,150
+379,Other,3/22/2023,Sponsors,397.33,158
+380,Credit Card,5/25/2002,Fine,42.95,115
+381,Credit,8/15/2025,Travel Ticket,420.06,138
+382,Credit,06/02/2008,Ads,22.82,287
+383,Credit,8/13/2025,Travel Ticket,179.57,81
+384,Cash,5/16/2017,Sponsors,423.96,147
+385,Cash,4/26/2022,Private Service,101.36,91
+386,Other,3/23/2019,Fine,23.37,365
+387,Other,10/31/2028,Ads,79.7,83
+388,Direct Debit,9/24/2007,Travel Ticket,202.32,41
+389,Other,12/23/2002,Ads,376.29,376
+390,Cash,5/26/2013,Sponsors,316.03,69
+391,Credit Card,12/08/2017,Sponsors,354.48,308
+392,Direct Debit,11/17/2007,Travel Ticket,400.53,117
+393,Direct Debit,3/30/2021,Travel Ticket,8.11,149
+394,Cash,10/17/2009,Fine,79.01,306
+395,Other,08/04/2029,Travel Ticket,243.94,60
+396,Other,07/11/2011,Fine,118.28,179
+397,Other,06/12/2001,Sponsors,279.59,13
+398,Credit,7/25/2013,Sponsors,112.52,126
+399,Credit,11/04/2026,Ads,147.53,206
+400,Credit Card,11/01/2008,Private Service,298.78,174
