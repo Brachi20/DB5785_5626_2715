@@ -163,9 +163,9 @@ Main features include:
 
 ## 🗱 3. DSD Diagram
 
-> ![ERD](images/erd/DSD.png)
+> ![DSD](stage_1/DSD.png)
 
- **[ERD.erdplus](stage_1/DSD.erdplus)**
+ **[DSD.erdplus](stage_1/DSD.erdplus)**
 
 
 ---
@@ -240,7 +240,7 @@ pg_restore -U postgres -d restored_db /backup/backup_2025-05-15.backup
 > ![Screenshot Backup](../images/screenshots/backup_success.png)
 > ![Screenshot Restore](../images/screenshots/restore_success.png)
 
-Backup file: **[backup\_2025-05-15.backup](stage_1/backup_2025-05-15.backup)**
+Backup file: [backup\_2025-05-15.backup](stage_1/backup_2025-05-15.backup)
 
 ---
 
