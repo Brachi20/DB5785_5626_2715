@@ -194,18 +194,11 @@ This workshop introduces key database concepts and provides hands-on practice in
    **[Add View Code Here]**
    *(Provide or link to the SQL code for views)*
 
-8. **PostgreSQL with Docker**:
-   - Set up a Docker container to run **PostgreSQL**.
-   - Configured database connections and managed data persistence within the containerized environment.
-
-   **[Add Docker Configuration Code Here]**
-   *(Link to or provide the Docker run command and any configuration files)*
-
 ---
 
 ## 💡 Workshop Outcomes
 
-By the end of this workshop, you should be able to:
+By the end of this workshop, we were able to:
 
 - Design and create a database schema based on an ERD.
 - Perform CRUD (Create, Read, Update, Delete) operations with SQL.
