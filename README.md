@@ -193,51 +193,105 @@ Description: Finds users who haven’t made a purchase in the last 6 months.
 
 🗑️ 8 DELETE Queries
 🧹 Delete 1 – Remove Users Without Purchases
+
 Description: Deletes users who never made a purchase.
-📸 Before, After, and Query Execution
+📸 Before:
+![Query 1 Screenshot](stage_2/Screenshots/delete1_before.png)
+
+After Query Execution:
+![Query 1 Screenshot](stage_2/Screenshots/delete1.png)
+
 
 🧹 Delete 2 – Remove Unsold Products
+
 Description: Deletes products that were never sold.
-📸 Before, After, and Query Execution
+📸 Before:
+![Query 2 Screenshot](stage_2/Screenshots/delete2_before.png)
+
+After Query Execution:
+![Query 2 Screenshot](stage_2/Screenshots/delete2.png)
 
 🧹 Delete 3 – Remove Empty Categories
-Description: Deletes categories that don’t contain any products.
-📸 Before, After, and Query Execution
 
-✏️ 7.3 UPDATE Queries
+Description: Deletes categories that don’t contain any products.
+📸 Before:
+![Query 3 Screenshot](stage_2/Screenshots/delete3_before.png)
+
+After Query Execution:
+![Query 3 Screenshot](stage_2/Screenshots/delete3.png)
+
+
+✏️ 9 UPDATE Queries
 🧾 Update 1 – Increase Price by 5% for Popular Products
+
 Description: Applies a price increase for products sold in high quantities.
-📸 Before, After, and Query Execution
+
+Query Execution:
+![Query 1 Screenshot](stage_2/Screenshots/update1.png)
+
+📸 Before
+![Query 1 Screenshot](stage_2/Screenshots/update1_rollback.png)
+
+After:
+![Query 1 Screenshot](stage_2/Screenshots/update1_after.png)
+
 
 🧾 Update 2 – Change User Address
 Description: Updates a specific user’s address.
-📸 Before, After, and Query Execution
+
+Query Execution:
+![Query 2 Screenshot](stage_2/Screenshots/update2.png)
+
+📸 Before
+![Query 2 Screenshot](stage_2/Screenshots/update2_rollback.png)
+
+After:
+![Query 2 Screenshot](stage_2/Screenshots/update2_after.png)
+
 
 🧾 Update 3 – Set Stock to Zero for Unsold Products
 Description: Changes stock to zero for products never sold.
-📸 Before, After, and Query Execution
 
-🛠️ 7.4 Constraints
-🔒 Constraint 1 – NOT NULL on Product Name
-Description: Ensures all products have a name using ALTER TABLE.
-📸 Query and Error Test
+Query Execution:
+![Query 3 Screenshot](stage_2/Screenshots/update3.png)
 
-🔒 Constraint 2 – CHECK Stock Quantity ≥ 0
-Description: Prevents negative stock values.
-📸 Query and Error Test
+📸 Before
+![Query 3 Screenshot](stage_2/Screenshots/update3_rollback.png)
 
-🔒 Constraint 3 – DEFAULT Status for New Users
-Description: Assigns 'active' as the default user status.
-📸 Query and Insertion Test
+After:
+![Query 3 Screenshot](stage_2/Screenshots/update3_after.png)
 
-🧮 7.5 Rollback & Commit
-🔄 Rollback Example
-Description: Updates a user’s name, then rolls back. Shows DB before and after.
-📸 Rollback Test
+🛠️ 10 Constraints
+🔒 Constraint 1 – NOT NULL on total_expense in taxreport
+Description: Prevents insertion of tax report entries without a total_expense value. Attempt to insert a row missing this value resulted in a NOT NULL violation.
 
-✅ Commit Example
-Description: Updates a product’s price and commits the change.
-📸 Commit Test
+📸 Query and Error Test:
+![Query 1 Screenshot](stage_2/Screenshots/הפרת אילוץ 1.png)
+
+
+🔒 Constraint 2 – PRIMARY KEY on invoice_id in invoice
+Description: Prevents duplicate invoice_id values. An attempt to insert an invoice with an existing ID caused a primary key violation and an invalid column error.
+
+📸 Query and Error Test:
+![Query 2 Screenshot](stage_2/Screenshots/הפרת אילוץ 2.png)
+
+
+🔒 Constraint 3 – NOT NULL on status in expense
+Description: Prevents inserting an expense without a status. An attempt to insert a NULL value in this field caused a NOT NULL constraint violation.
+
+📸 Query and Insertion Test:
+![Query 3 Screenshot](stage_2/Screenshots/הפרת אילוץ 3.png)
+
+
+🔄 11. Rollback & Commit
+📄 **SQL File**: [stage_2/RollbackCommit.sql](stage_2/RollbackCommit.sql)
+
+
+📉 Rollback Test
+A record was updated and then reverted using the ROLLBACK command. This confirmed that the database returned to its original state as expected.
+
+📈 Commit Test
+A record was updated and the change was saved using the COMMIT command. Verifying the table showed the data remained changed after the commit.
 
 📂 All files used in this stage are located in the folder: stage_2/
 
