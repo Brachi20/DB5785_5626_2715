@@ -212,6 +212,7 @@ Description: Deletes users who never made a purchase.
 
 
 After Query Execution:
+
 ![Query 1 Screenshot](stage_2/Screenshots/delete1.png)
 
 
@@ -221,10 +222,12 @@ After Query Execution:
 Description: Deletes products that were never sold.
 
 📸 Before:
+
 ![Query 2 Screenshot](stage_2/Screenshots/delete2_before.png)
 
 
 After Query Execution:
+
 ![Query 2 Screenshot](stage_2/Screenshots/delete2.png)
 
 
@@ -234,10 +237,12 @@ After Query Execution:
 Description: Deletes categories that don’t contain any products.
 
 📸 Before:
+
 ![Query 3 Screenshot](stage_2/Screenshots/delete3_before.png)
 
 
 After Query Execution:
+
 ![Query 3 Screenshot](stage_2/Screenshots/delete3.png)
 
 
@@ -248,14 +253,17 @@ After Query Execution:
 Description: Applies a price increase for products sold in high quantities.
 
 Query Execution:
+
 ![Query 1 Screenshot](stage_2/Screenshots/update1.png)
 
 
-📸 Before
+📸 Before:
+
 ![Query 1 Screenshot](stage_2/Screenshots/update1_rollback.png)
 
 
 After:
+
 ![Query 1 Screenshot](stage_2/Screenshots/update1_after.png)
 
 
@@ -264,14 +272,17 @@ After:
 Description: Updates a specific user’s address.
 
 Query Execution:
+
 ![Query 2 Screenshot](stage_2/Screenshots/update2.png)
 
 
-📸 Before
+📸 Before:
+
 ![Query 2 Screenshot](stage_2/Screenshots/update2_rollback.png)
 
 
 After:
+
 ![Query 2 Screenshot](stage_2/Screenshots/update2_after.png)
 
 
@@ -280,14 +291,17 @@ After:
 Description: Changes stock to zero for products never sold.
 
 Query Execution:
+
 ![Query 3 Screenshot](stage_2/Screenshots/update3.png)
 
 
-📸 Before
+📸 Before:
+
 ![Query 3 Screenshot](stage_2/Screenshots/update3_rollback.png)
 
 
 After:
+
 ![Query 3 Screenshot](stage_2/Screenshots/update3_after.png)
 
 
@@ -297,6 +311,7 @@ After:
 Description: Prevents insertion of tax report entries without a total_expense value. Attempt to insert a row missing this value resulted in a NOT NULL violation.
 
 📸 Query and Error Test:
+
 ![Query 1 Screenshot](stage_2/Screenshots/הפרת אילוץ 1.png)
 
 
@@ -305,6 +320,7 @@ Description: Prevents insertion of tax report entries without a total_expense va
 Description: Prevents duplicate invoice_id values. An attempt to insert an invoice with an existing ID caused a primary key violation and an invalid column error.
 
 📸 Query and Error Test:
+
 ![Query 2 Screenshot](stage_2/Screenshots/הפרת אילוץ 2.png)
 
 
@@ -313,6 +329,7 @@ Description: Prevents duplicate invoice_id values. An attempt to insert an invoi
 Description: Prevents inserting an expense without a status. An attempt to insert a NULL value in this field caused a NOT NULL constraint violation.
 
 📸 Query and Insertion Test:
+
 ![Query 3 Screenshot](stage_2/Screenshots/הפרת אילוץ 3.png)
 
 
