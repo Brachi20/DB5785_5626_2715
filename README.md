@@ -29,8 +29,8 @@ Stage B – Queries and Constraints
 7. SELECT Queries  
 8. DELETE Queries  
 9. UPDATE Queries  
-10. Constraints  
-11. Rollback & Commit
+ 10. Constraints  
+ 11. Rollback & Commit
 
 ---
 
@@ -140,37 +140,56 @@ Backup file: [backup\_2025-05-15.backup](stage_1/backup_2025-05-15.backup)
 📊 Stage B Report – Queries and Constraints
 
 📌 7. SELECT Queries
+
 📍 Query 1 – Monthly Average Purchases Per User
+
 Description: Displays how many purchases each user made per month in the past year.
 ![Query 1 ](stage_2/Screenshots/select1.png)
 
+
 📍 Query 2 – Products Never Sold
+
 Description: Lists all products that were never part of any purchase.
 ![Query 1 ](stage_2/Screenshots/select2.png)
 
+
 📍 Query 3 – Annual Income Summary
+
 Description: Shows the total income per year based on product quantities and unit prices.
 ![Query 1 ](stage_2/Screenshots/select3.png)
 
+
 📍 Query 4 – Users Who Spent Over 1000 NIS
+
 Description: Lists users whose cumulative spending exceeds 1000 NIS.
 ![Query 1 ](stage_2/Screenshots/select4.png)
 
+
 📍 Query 5 – Last Purchase Date Per User
+
 Description: Retrieves the most recent purchase date for each user.
 ![Query 1 ](stage_2/Screenshots/select5.png)
 
+
 📍 Query 6 – Number of Products Per Category
+
 Description: Displays how many products exist in each category.
 ![Query 1 ](stage_2/Screenshots/select6.png)
 
+
 📍 Query 7 – Low Stock Products
+
 Description: Shows products with stock quantity less than 10.
-![Query 1 ](stage_2/Screenshots/select7.png)
+![Query 1 ](stage_2/Screenshots/select7.1.png)
+
+![Query 1 ](stage_2/Screenshots/select7.2.png)
+
 
 📍 Query 8 – Inactive Users in the Last 6 Months
+
 Description: Finds users who haven’t made a purchase in the last 6 months.
 ![Query 1 ](stage_2/Screenshots/select8.png)
+
 
 🗑️ 8 DELETE Queries
 🧹 Delete 1 – Remove Users Without Purchases
