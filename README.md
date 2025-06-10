@@ -15,19 +15,22 @@ Brachi Tarkieltaub 325925626**
 ---
 
 ## 📁 Table of Contents
-Stage A - Database Design and Setup
-   1. Introduction
-   2. ERD Diagram
-   3. DSD Diagram
-   4. Design Decisions
-   5. Data Insertion Methods
-   6. Database Backup and Restore
-Stage B Report – Queries and Constraints
-   7. SELECT Queries
-   8. DELETE Queries
-   9. UPDATE Queries
-   10. Constraints
-   11. Rollback & Commit
+
+**Stage A – Database Design and Setup**
+1. Introduction  
+2. ERD Diagram  
+3. DSD Diagram  
+4. Design Decisions  
+5. Data Insertion Methods  
+6. Database Backup and Restore  
+
+**Stage B – Queries and Constraints**
+7. SELECT Queries  
+8. DELETE Queries  
+9. UPDATE Queries  
+10. Constraints  
+11. Rollback & Commit
+
 ---
 
 ## 📘 1. Introduction
