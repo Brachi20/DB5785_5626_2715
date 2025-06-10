@@ -147,10 +147,12 @@ Description: Displays how many purchases each user made per month in the past ye
 ![Query 1 ](stage_2/Screenshots/select1.png)
 
 
+
 📍 Query 2 – Products Never Sold
 
 Description: Lists all products that were never part of any purchase.
 ![Query 1 ](stage_2/Screenshots/select2.png)
+
 
 
 📍 Query 3 – Annual Income Summary
@@ -159,10 +161,12 @@ Description: Shows the total income per year based on product quantities and uni
 ![Query 1 ](stage_2/Screenshots/select3.png)
 
 
+
 📍 Query 4 – Users Who Spent Over 1000 NIS
 
 Description: Lists users whose cumulative spending exceeds 1000 NIS.
 ![Query 1 ](stage_2/Screenshots/select4.png)
+
 
 
 📍 Query 5 – Last Purchase Date Per User
@@ -171,18 +175,23 @@ Description: Retrieves the most recent purchase date for each user.
 ![Query 1 ](stage_2/Screenshots/select5.png)
 
 
+
 📍 Query 6 – Number of Products Per Category
 
 Description: Displays how many products exist in each category.
 ![Query 1 ](stage_2/Screenshots/select6.png)
 
 
+
 📍 Query 7 – Low Stock Products
 
 Description: Shows products with stock quantity less than 10.
+
 ![Query 1 ](stage_2/Screenshots/select7.1.png)
 
+
 ![Query 1 ](stage_2/Screenshots/select7.2.png)
+
 
 
 📍 Query 8 – Inactive Users in the Last 6 Months
@@ -191,34 +200,45 @@ Description: Finds users who haven’t made a purchase in the last 6 months.
 ![Query 1 ](stage_2/Screenshots/select8.png)
 
 
+
 🗑️ 8 DELETE Queries
 🧹 Delete 1 – Remove Users Without Purchases
 
 Description: Deletes users who never made a purchase.
+
 📸 Before:
 ![Query 1 Screenshot](stage_2/Screenshots/delete1_before.png)
+
 
 After Query Execution:
 ![Query 1 Screenshot](stage_2/Screenshots/delete1.png)
 
 
+
 🧹 Delete 2 – Remove Unsold Products
 
 Description: Deletes products that were never sold.
+
 📸 Before:
 ![Query 2 Screenshot](stage_2/Screenshots/delete2_before.png)
+
 
 After Query Execution:
 ![Query 2 Screenshot](stage_2/Screenshots/delete2.png)
 
+
+
 🧹 Delete 3 – Remove Empty Categories
 
 Description: Deletes categories that don’t contain any products.
+
 📸 Before:
 ![Query 3 Screenshot](stage_2/Screenshots/delete3_before.png)
 
+
 After Query Execution:
 ![Query 3 Screenshot](stage_2/Screenshots/delete3.png)
+
 
 
 ✏️ 9 UPDATE Queries
@@ -229,11 +249,14 @@ Description: Applies a price increase for products sold in high quantities.
 Query Execution:
 ![Query 1 Screenshot](stage_2/Screenshots/update1.png)
 
+
 📸 Before
 ![Query 1 Screenshot](stage_2/Screenshots/update1_rollback.png)
 
+
 After:
 ![Query 1 Screenshot](stage_2/Screenshots/update1_after.png)
+
 
 
 🧾 Update 2 – Change User Address
@@ -242,11 +265,14 @@ Description: Updates a specific user’s address.
 Query Execution:
 ![Query 2 Screenshot](stage_2/Screenshots/update2.png)
 
+
 📸 Before
 ![Query 2 Screenshot](stage_2/Screenshots/update2_rollback.png)
 
+
 After:
 ![Query 2 Screenshot](stage_2/Screenshots/update2_after.png)
+
 
 
 🧾 Update 3 – Set Stock to Zero for Unsold Products
@@ -255,11 +281,15 @@ Description: Changes stock to zero for products never sold.
 Query Execution:
 ![Query 3 Screenshot](stage_2/Screenshots/update3.png)
 
+
 📸 Before
 ![Query 3 Screenshot](stage_2/Screenshots/update3_rollback.png)
 
+
 After:
 ![Query 3 Screenshot](stage_2/Screenshots/update3_after.png)
+
+
 
 🛠️ 10 Constraints
 🔒 Constraint 1 – NOT NULL on total_expense in taxreport
@@ -269,6 +299,7 @@ Description: Prevents insertion of tax report entries without a total_expense va
 ![Query 1 Screenshot](stage_2/Screenshots/הפרת אילוץ 1.png)
 
 
+
 🔒 Constraint 2 – PRIMARY KEY on invoice_id in invoice
 Description: Prevents duplicate invoice_id values. An attempt to insert an invoice with an existing ID caused a primary key violation and an invalid column error.
 
@@ -276,11 +307,13 @@ Description: Prevents duplicate invoice_id values. An attempt to insert an invoi
 ![Query 2 Screenshot](stage_2/Screenshots/הפרת אילוץ 2.png)
 
 
+
 🔒 Constraint 3 – NOT NULL on status in expense
 Description: Prevents inserting an expense without a status. An attempt to insert a NULL value in this field caused a NOT NULL constraint violation.
 
 📸 Query and Insertion Test:
 ![Query 3 Screenshot](stage_2/Screenshots/הפרת אילוץ 3.png)
+
 
 
 🔄 11. Rollback & Commit
