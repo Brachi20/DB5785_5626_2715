@@ -15,14 +15,19 @@ Brachi Tarkieltaub 325925626**
 ---
 
 ## 📁 Table of Contents
-
-1. Introduction
-2. ERD Diagram
-3. DSD Diagram
-4. Design Decisions
-5. Data Insertion Methods
-6. Database Backup and Restore
-
+Stage A - Database Design and Setup
+   1. Introduction
+   2. ERD Diagram
+   3. DSD Diagram
+   4. Design Decisions
+   5. Data Insertion Methods
+   6. Database Backup and Restore
+Stage B Report – Queries and Constraints
+   7. SELECT Queries
+   8. DELETE Queries
+   9. UPDATE Queries
+   10. Constraints
+   11. Rollback & Commit
 ---
 
 ## 📘 1. Introduction
@@ -128,7 +133,100 @@ pg_restore -U postgres -d restored_db /backup/backup_2025-05-15.backup
 Backup file: [backup\_2025-05-15.backup](stage_1/backup_2025-05-15.backup)
 
 ---
+📊 Stage B Report – Queries and Constraints
 
+📌 7. SELECT Queries
+📍 Query 1 – Monthly Average Purchases Per User
+Description: Displays how many purchases each user made per month in the past year.
+![Query 1 ](stage_2/Screenshots/select1.png)
+
+📍 Query 2 – Products Never Sold
+Description: Lists all products that were never part of any purchase.
+![Query 1 ](stage_2/Screenshots/select2.png)
+
+📍 Query 3 – Annual Income Summary
+Description: Shows the total income per year based on product quantities and unit prices.
+![Query 1 ](stage_2/Screenshots/select3.png)
+
+📍 Query 4 – Users Who Spent Over 1000 NIS
+Description: Lists users whose cumulative spending exceeds 1000 NIS.
+![Query 1 ](stage_2/Screenshots/select4.png)
+
+📍 Query 5 – Last Purchase Date Per User
+Description: Retrieves the most recent purchase date for each user.
+![Query 1 ](stage_2/Screenshots/select5.png)
+
+📍 Query 6 – Number of Products Per Category
+Description: Displays how many products exist in each category.
+![Query 1 ](stage_2/Screenshots/select6.png)
+
+📍 Query 7 – Low Stock Products
+Description: Shows products with stock quantity less than 10.
+![Query 1 ](stage_2/Screenshots/select7.png)
+
+📍 Query 8 – Inactive Users in the Last 6 Months
+Description: Finds users who haven’t made a purchase in the last 6 months.
+![Query 1 ](stage_2/Screenshots/select8.png)
+
+🗑️ 8 DELETE Queries
+🧹 Delete 1 – Remove Users Without Purchases
+Description: Deletes users who never made a purchase.
+📸 Before, After, and Query Execution
+
+🧹 Delete 2 – Remove Unsold Products
+Description: Deletes products that were never sold.
+📸 Before, After, and Query Execution
+
+🧹 Delete 3 – Remove Empty Categories
+Description: Deletes categories that don’t contain any products.
+📸 Before, After, and Query Execution
+
+✏️ 7.3 UPDATE Queries
+🧾 Update 1 – Increase Price by 5% for Popular Products
+Description: Applies a price increase for products sold in high quantities.
+📸 Before, After, and Query Execution
+
+🧾 Update 2 – Change User Address
+Description: Updates a specific user’s address.
+📸 Before, After, and Query Execution
+
+🧾 Update 3 – Set Stock to Zero for Unsold Products
+Description: Changes stock to zero for products never sold.
+📸 Before, After, and Query Execution
+
+🛠️ 7.4 Constraints
+🔒 Constraint 1 – NOT NULL on Product Name
+Description: Ensures all products have a name using ALTER TABLE.
+📸 Query and Error Test
+
+🔒 Constraint 2 – CHECK Stock Quantity ≥ 0
+Description: Prevents negative stock values.
+📸 Query and Error Test
+
+🔒 Constraint 3 – DEFAULT Status for New Users
+Description: Assigns 'active' as the default user status.
+📸 Query and Insertion Test
+
+🧮 7.5 Rollback & Commit
+🔄 Rollback Example
+Description: Updates a user’s name, then rolls back. Shows DB before and after.
+📸 Rollback Test
+
+✅ Commit Example
+Description: Updates a product’s price and commits the change.
+📸 Commit Test
+
+📂 All files used in this stage are located in the folder: stage_2/
+
+Queries.sql
+
+Constraints.sql
+
+RollbackCommit.sql
+
+backup2
+
+Screenshots for all operations
 
 ---
 
