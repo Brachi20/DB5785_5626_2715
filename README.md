@@ -207,6 +207,7 @@ Description: Finds users who haven’t made a purchase in the last 6 months.
 Description: Deletes users who never made a purchase.
 
 📸 Before:
+
 ![Query 1 Screenshot](stage_2/Screenshots/delete1_before.png)
 
 
