@@ -108,9 +108,13 @@ We used three different methods for populating the database:
 
 *Used Formulas in generating data on TaxReport Table:
 > ![ERD](stage_1/mockarooFiles/sql/report_date.png)
+> 
 > ![ERD](stage_1/mockarooFiles/sql/tax_amount.png)
+> 
 > ![ERD](stage_1/mockarooFiles/sql/tax_paid.png)
+> 
 > ![ERD](stage_1/mockarooFiles/sql/tax_year.png)
+> 
 
 
 * Folders: `stage_1/mockarooFiles/sql`
