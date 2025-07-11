@@ -1,7 +1,6 @@
 # 🧑‍💻 DB5785 - PostgreSQL and Docker Workshop 🗄️🐋
 
 ---
-## 📎 Stage A Report – DBProject
 
 ### 👩‍💻 Submitters:
 
@@ -40,7 +39,10 @@ Stage C – Integration & Views
 • Views.sql Description  
 • View Queries and Screenshots  
 
+Stage D – Functions, Procedures, Triggers & Main Programs
+
 ---
+## 📎 Stage A Report – DBProject
 
 ## 📘 1. Introduction
 
@@ -518,265 +520,339 @@ LEFT JOIN payment p ON t.payment_id = p.payment_id;
 - `backup3`
 - `README.md` (this file)
 
+  מצוין! קראתי בהצלחה את כל הקבצים שהעלית – פונקציות, פרוצדורות, טריגרים ותוכניות ראשיות. עכשיו אני אכתוב לך סיכום מלא עבור **שלב 4 – Stored Procedures, Functions, Triggers & Main Programs** באנגלית, באותו סגנון של README, כולל:
 
-## Workshop Outcomes
-
-By the end of this workshop, you will:
-
-- Understand how to set up PostgreSQL and pgAdmin using Docker.
-- Learn how to use Docker volumes to persist database data.
-- Gain hands-on experience with basic and advanced database operations.
-
-----
-<a name="workshop-id"></a>
-## 📝 Workshop Files & Scripts (to be modified by the students) 🧑‍🎓 
-
-This workshop introduces key database concepts and provides hands-on practice in a controlled, containerized environment using PostgreSQL within Docker.
-
-### Key Concepts Covered:
-
-1. **Entity-Relationship Diagram (ERD)**:
-   - Designed an ERD to model relationships and entities for the database structure.
-   - Focused on normalizing the database and ensuring scalability.
-
-   **[Add ERD Snapshot Here]**
-   
- images/erd/ERD.png  
-> ![add_image_to readme_with_relative_path](images/erd/ERD.png)
-  
-   *(Upload or link to the ERD image or file)*
-
-3. **Creating Tables**:
-   - Translated the ERD into actual tables, defining columns, data types, primary keys, and foreign keys.
-   - Utilized SQL commands for table creation.
-
-   **[Add Table Creation Code Here](stage_1/createTables.sql)**
-   *(Provide or link to the SQL code used to create the tables)*
-
-4. **Generating Sample Data**:
-   - Generated sample data to simulate real-world scenarios using **SQL Insert Statements**.
-   - Used scripts to automate bulk data insertion for large datasets.
-
-   **[Add Sample Data Insert Script Here](stage_1/insertTables.sql)**
-   *(Upload or link to the sample data insert scripts)*
-
-5. **Writing SQL Queries**:
-   - Practiced writing **SELECT**, **JOIN**, **GROUP BY**, and **ORDER BY** queries.
-   - Learned best practices for querying data efficiently, including indexing and optimization techniques.
-
-   **[Add Example SQL Query Here]**
-   *(Provide or link to example SQL queries)*
-
-6. **Stored Procedures and Functions**:
-   - Created reusable **stored procedures** and **functions** to handle common database tasks.
-   - Used SQL to manage repetitive operations and improve performance.
-
-   **[Add Stored Procedures/Function Code Here]**
-   *(Upload or link to SQL code for stored procedures and functions)*
-
-7. **Views**:
-   - Created **views** to simplify complex queries and provide data abstraction.
-   - Focused on security by limiting user access to certain columns or rows.
-
-   **[Add View Code Here]**
-   *(Provide or link to the SQL code for views)*
+1. הסבר כללי
+2. הצגת כל קטע קוד במפורש
+3. הסבר ברור על מטרת כל רכיב
+4. תיאור של ההרצות של התוכניות הראשיות (כולל הצעה למקום להוסיף צילומי מסך)
 
 ---
 
-## 💡 Workshop Outcomes
-
-By the end of this workshop, we were able to:
-
-- Design and create a database schema based on an ERD.
-- Perform CRUD (Create, Read, Update, Delete) operations with SQL.
-- Write complex queries using joins, aggregations, and subqueries.
-- Create and use stored functions and procedures for automation and performance.
-- Work effectively with PostgreSQL inside a Docker container for development and testing.
+## 🧮 Stage D – Functions, Procedures, Triggers & Main Programs
 
 ---
 
-## Additional Tasks for Students
+### 🎯 Overview
 
-### 1. **Database Backup and Restore**
-   - Use `pg_dump` to back up your database and `pg_restore` or `psql` to restore it.
+In this stage, we implemented core business logic directly in the database using:
 
-   ```bash
-   # Backup the database
-   pg_dump -U postgres -d your_database_name -f backup.sql
+* **Functions** for computations and result aggregation
+* **Stored Procedures** for performing actions such as data updates
+* **Triggers** for automatic rule enforcement and logging
+* **Main Programs** (written in PL/pgSQL) for executing sequences of operations and generating results
 
-   # Restore the database
-   psql -U postgres -d your_database_name -f backup.sql
-   ```
-
-### 2. **Indexing and Query Optimization**
-   - Create indexes on frequently queried columns and analyze query performance.
-
-   ```sql
-   -- Create an index
-   CREATE INDEX idx_your_column ON your_table(your_column);
-
-   -- Analyze query performance
-   EXPLAIN ANALYZE SELECT * FROM your_table WHERE your_column = 'value';
-   ```
-
-### 3. **User Roles and Permissions**
-   - Create user roles and assign permissions to database objects.
-
-   ```sql
-   -- Create a user role
-   CREATE ROLE read_only WITH LOGIN PASSWORD 'password';
-
-   -- Grant read-only access to a table
-   GRANT SELECT ON your_table TO read_only;
-   ```
-
-### 4. **Advanced SQL Queries**
-   - Write advanced SQL queries using window functions, recursive queries, and CTEs.
-
-   ```sql
-   -- Example: Using a window function
-   SELECT id, name, salary, ROW_NUMBER() OVER (ORDER BY salary DESC) AS rank
-   FROM employees;
-   ```
-
-### 6. **Database Monitoring**
-   - Use PostgreSQL's built-in tools to monitor database performance.
-
-   ```sql
-   -- View active queries
-   SELECT * FROM pg_stat_activity;
-
-   -- Analyze table statistics
-   SELECT * FROM pg_stat_user_tables;
-   ```
-
-### 7. **Using Extensions**
-   - Install and use PostgreSQL extensions like `pgcrypto` or `postgis`.
-
-   ```sql
-   -- Install the pgcrypto extension
-   CREATE EXTENSION pgcrypto;
-
-   -- Example: Encrypt data
-   INSERT INTO users (username, password) VALUES ('alice', crypt('password', gen_salt('bf')));
-   ```
-
-### 8. **Automating Tasks with Cron Jobs**
-   - Automate database maintenance tasks (e.g., backups) using cron jobs.
-
-   ```bash
-   # Example: Schedule a daily backup at 2 AM
-   0 2 * * * pg_dump -U postgres -d your_database_name -f /backups/backup_$(date +\%F).sql
-   ```
-
-### 9. **Database Testing**
-   - Write unit tests for your database using `pgTAP`.
-
-   ```sql
-   -- Example: Test if a table exists
-   SELECT * FROM tap.plan(1);
-   SELECT tap.has_table('public', 'your_table', 'Table should exist');
-   SELECT * FROM tap.finish();
-   ```
+This layer ensures that key validations and processes are performed close to the data, improving performance, maintainability, and reliability.
 
 ---
 
-## Troubleshooting
+### 📌 Stored Functions
 
-### 1. **Connection Issues**
-   - **Problem**: Unable to connect to the PostgreSQL or pgAdmin container.
-   - **Solution**:  
-     - Ensure both the PostgreSQL and pgAdmin containers are running. You can check their status by running:
-       ```bash
-       docker ps
-       ```
-     - Verify that you have the correct container names. If you are unsure of the names, you can list all containers (running and stopped) with:
-       ```bash
-       docker ps -a
-       ```
-     - Ensure that the correct ports are mapped (e.g., `5432:5432` for PostgreSQL and `5050:80` for pgAdmin).
-     - Verify that the `postgres` container's name is used in pgAdmin's connection settings.
-     - If using `localhost` and experiencing connection issues, try using the container name instead (e.g., `postgres`).
-     - Check the logs for any error messages:
-       ```bash
-       docker logs postgres
-       docker logs pgadmin
-       ```
-     - If you are still having trouble, try restarting the containers:
-       ```bash
-       docker restart postgres
-       docker restart pgadmin
-       ```
+#### 🔹 `get_yearly_revenue_summary(year INT)`
 
-### 2. **Forgot Password**
-   - **Problem**: You've forgotten the password for pgAdmin or PostgreSQL.
-   - **Solution**:
-     - For pgAdmin:
-       1. Stop the pgAdmin container:
-          ```bash
-          docker stop pgadmin
-          ```
-       2. Restart the container with a new password:
-          ```bash
-          docker run --name pgadmin -d -p 5050:80 -e PGADMIN_DEFAULT_EMAIL=admin@example.com -e PGADMIN_DEFAULT_PASSWORD=new_password dpage/pgadmin4:latest
-          ```
-     - For PostgreSQL:
-       1. If you've forgotten the `POSTGRES_PASSWORD` for PostgreSQL, you’ll need to reset it. First, stop the container:
-          ```bash
-          docker stop postgres
-          ```
-       2. Restart it with a new password:
-          ```bash
-          docker run --name postgres -e POSTGRES_PASSWORD=new_password -d -p 5432:5432 -v postgres_data:/var/lib/postgresql/data postgres
-          ```
+**Purpose:**
+Returns the total revenue and number of payments for a given year.
 
-### 3. **Port Conflicts**
-   - **Problem**: Port is already in use on the host machine (e.g., port 5432 or 5050).
-   - **Solution**:  
-     - If a port conflict occurs (for example, PostgreSQL's default port `5432` is already in use), you can map a different host port to the container's port by changing the `-p` flag:
-       ```bash
-       docker run --name postgres -e POSTGRES_PASSWORD=your_password -d -p 5433:5432 -v postgres_data:/var/lib/postgresql/data postgres
-       ```
-       This would map PostgreSQL’s internal `5432` to the host’s `5433` port.
-     - Similarly, for pgAdmin, you can use a different port:
-       ```bash
-       docker run --name pgadmin -d -p 5051:80 -e PGADMIN_DEFAULT_EMAIL=admin@example.com -e PGADMIN_DEFAULT_PASSWORD=admin dpage/pgadmin4:latest
-       ```
-
-### 4. **Unable to Access pgAdmin in Browser**
-   - **Problem**: You cannot access pgAdmin through `http://localhost:5050` (or other port you have set).
-   - **Solution**:
-     - Ensure the pgAdmin container is running:
-       ```bash
-       docker ps
-       ```
-     - Double-check that the port mapping is correct and no firewall is blocking the port.
-     - If using a non-default port (e.g., `5051` instead of `5050`), ensure you access it by visiting `http://localhost:5051` instead.
-
-### 5. **Data Persistence Issue**
-   - **Problem**: After stopping or removing the PostgreSQL container, the data is lost.
-   - **Solution**:
-     - Ensure that you are using a Docker volume for data persistence. When starting the container, use the `-v` flag to map the volume:
-       ```bash
-       docker run --name postgres -e POSTGRES_PASSWORD=your_password -d -p 5432:5432 -v postgres_data:/var/lib/postgresql/data postgres
-       ```
-     - To inspect or back up the volume:
-       ```bash
-       docker volume inspect postgres_data
-       ```
-
-### 6. **Accessing pgAdmin with Docker Network**
-   - **Problem**: If you are trying to connect from pgAdmin to PostgreSQL and the connection is unsuccessful.
-   - **Solution**:
-     - Make sure both containers (PostgreSQL and pgAdmin) are on the same Docker network:
-       ```bash
-       docker network create pg_network
-       docker run --name postgres --network pg_network -e POSTGRES_PASSWORD=your_password -d -p 5432:5432 -v postgres_data:/var/lib/postgresql/data postgres
-       docker run --name pgadmin --network pg_network -d -p 5050:80 -e PGADMIN_DEFAULT_EMAIL=admin@example.com -e PGADMIN_DEFAULT_PASSWORD=admin dpage/pgadmin4:latest
-       ```
-     - This ensures that both containers can communicate over the internal network created by Docker.
+```sql
+-- fun1.sql
+CREATE OR REPLACE FUNCTION get_yearly_revenue_summary(year INT)
+RETURNS TABLE (
+    year INT,
+    total_revenue NUMERIC,
+    num_payments INT
+)
+AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        EXTRACT(YEAR FROM r.revenue_date)::INT,
+        SUM(p.amount),
+        COUNT(p.payment_id)
+    FROM revenue r
+    JOIN payment p ON r.revenue_id = p.revenue_id
+    WHERE EXTRACT(YEAR FROM r.revenue_date)::INT = year
+    GROUP BY 1;
+END;
+$$ LANGUAGE plpgsql;
+```
 
 ---
+
+#### 🔹 `get_top_clients_and_payment_source(p_min_total NUMERIC)`
+
+**Purpose:**
+Returns clients who paid more than a given amount, along with their most common payment method.
+
+```sql
+-- fun2.sql
+CREATE OR REPLACE FUNCTION get_top_clients_and_payment_source(p_min_total NUMERIC)
+RETURNS TABLE (
+    recipient TEXT,
+    total_paid NUMERIC,
+    num_payments INTEGER,
+    most_used_source TEXT
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    RETURN QUERY
+    WITH invoice_payment AS (
+        SELECT
+            i.recipient AS inv_recipient,
+            ps.source_name,
+            p.amount
+        FROM invoice i
+        JOIN payment p ON i.payment_id = p.payment_id
+        JOIN paymentsource ps ON p.source_id = ps.source_id
+    ),
+    total_by_recipient AS (
+        SELECT
+            inv_recipient,
+            SUM(amount) AS total_paid,
+            COUNT(*)::INTEGER AS num_payments
+        FROM invoice_payment
+        GROUP BY inv_recipient
+        HAVING SUM(amount) > p_min_total
+    ),
+    usage_by_source AS (
+        SELECT
+            ip.inv_recipient,
+            ip.source_name,
+            COUNT(*) AS usage_count,
+            ROW_NUMBER() OVER (
+                PARTITION BY ip.inv_recipient
+                ORDER BY COUNT(*) DESC
+            ) AS rn
+        FROM invoice_payment ip
+        JOIN total_by_recipient tbr ON ip.inv_recipient = tbr.inv_recipient
+        GROUP BY ip.inv_recipient, ip.source_name
+    )
+    SELECT
+        tbr.inv_recipient,
+        tbr.total_paid,
+        tbr.num_payments,
+        ubs.source_name
+    FROM total_by_recipient tbr
+    JOIN usage_by_source ubs ON tbr.inv_recipient = ubs.inv_recipient AND ubs.rn = 1;
+END;
+$$;
+```
+
+---
+
+### ⚙️ Stored Procedures
+
+#### 🔹 `create_full_payment_flow(...)`
+
+**Purpose:**
+Encapsulates the process of inserting a new revenue, payment, and invoice row in a single atomic operation.
+
+```sql
+-- pro1.sql
+CREATE OR REPLACE PROCEDURE create_full_payment_flow(
+    p_description TEXT,
+    p_amount NUMERIC,
+    p_source TEXT,
+    p_recipient TEXT,
+    p_date DATE
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_revenue_id INT;
+    v_payment_id INT;
+    v_invoice_id INT;
+    v_source_id INT;
+    v_status_id INT;
+BEGIN
+    INSERT INTO revenue(description, revenue_date)
+    VALUES (p_description, p_date)
+    RETURNING revenue_id INTO v_revenue_id;
+
+    SELECT source_id INTO v_source_id FROM paymentsource WHERE source_name = p_source;
+
+    INSERT INTO payment(amount, revenue_id, source_id, payment_date)
+    VALUES (p_amount, v_revenue_id, v_source_id, p_date)
+    RETURNING payment_id INTO v_payment_id;
+
+    SELECT status_id INTO v_status_id FROM invoicestatus WHERE status_name = 'Issued';
+
+    INSERT INTO invoice(amount, issue_date, recipient, status_id, payment_id)
+    VALUES (p_amount, p_date, p_recipient, v_status_id, v_payment_id)
+    RETURNING invoice_id INTO v_invoice_id;
+
+    RAISE NOTICE 'Process completed: revenue_id = %, payment_id = %, invoice_id = %',
+        v_revenue_id, v_payment_id, v_invoice_id;
+END;
+$$;
+```
+
+---
+
+#### 🔹 `update_paid_invoices()`
+
+**Purpose:**
+Updates invoice status to 'Paid' if the exact amount has been paid.
+
+```sql
+-- pro2.sql
+CREATE OR REPLACE PROCEDURE update_paid_invoices()
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_paid_id INTEGER;
+    r_invoice RECORD;
+BEGIN
+    SELECT status_id INTO v_paid_id
+    FROM invoicestatus
+    WHERE status_name = 'Paid';
+
+    IF v_paid_id IS NULL THEN
+        RAISE EXCEPTION 'No "Paid" status found in invoicestatus table';
+    END IF;
+
+    FOR r_invoice IN
+        SELECT i.invoice_id, i.amount, p.amount AS paid_amount
+        FROM invoice i
+        JOIN payment p ON i.payment_id = p.payment_id
+        WHERE i.status_id IS DISTINCT FROM v_paid_id
+    LOOP
+        IF r_invoice.amount = r_invoice.paid_amount THEN
+            UPDATE invoice
+            SET status_id = v_paid_id
+            WHERE invoice_id = r_invoice.invoice_id;
+        END IF;
+    END LOOP;
+END;
+$$;
+```
+
+---
+
+#### 🔹 `update_tax_report(p_year INT)`
+
+**Purpose:**
+Recalculates and updates the tax report for a specific year based on all related payments and expenses.
+
+```sql
+-- pro3.sql
+CREATE OR REPLACE PROCEDURE update_tax_report(p_year INT)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_total_revenue NUMERIC := 0;
+    v_total_expense NUMERIC := 0;
+    v_tax NUMERIC := 0;
+BEGIN
+    SELECT SUM(p.amount)
+    INTO v_total_revenue
+    FROM payment p
+    WHERE EXTRACT(YEAR FROM p.payment_date) = p_year;
+
+    SELECT SUM(e.amount)
+    INTO v_total_expense
+    FROM expense e
+    WHERE e.year = p_year;
+
+    v_tax := ROUND(v_total_revenue * 0.18, 2);
+
+    UPDATE taxreport
+    SET total_revenue = COALESCE(v_total_revenue, 0),
+        total_expense = COALESCE(v_total_expense, 0),
+        tax_amount = COALESCE(v_tax, 0),
+        report_date = NOW()::DATE
+    WHERE tax_year = p_year;
+END;
+$$;
+```
+
+---
+
+### 🔁 Triggers
+
+#### 🔹 `log_expense_insert`
+
+**Purpose:**
+Automatically logs any new expense inserted.
+
+```sql
+-- triger1.sql
+CREATE OR REPLACE FUNCTION log_expense_insert()
+RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO audit_log(event_type, table_name, description, event_time)
+    VALUES ('INSERT', 'expense', 'New expense added', NOW());
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_log_expense_insert
+AFTER INSERT ON expense
+FOR EACH ROW
+EXECUTE FUNCTION log_expense_insert();
+```
+
+---
+
+#### 🔹 `prevent_tax_amount_override`
+
+**Purpose:**
+Prevents manual override of calculated tax amount.
+
+```sql
+-- triger2.sql
+CREATE OR REPLACE FUNCTION prevent_tax_override()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.tax_amount <> ROUND(NEW.total_revenue * 0.18, 2) THEN
+        RAISE EXCEPTION 'Manual override of tax amount is not allowed.';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_prevent_tax_override
+BEFORE INSERT OR UPDATE ON taxreport
+FOR EACH ROW
+EXECUTE FUNCTION prevent_tax_override();
+```
+
+---
+
+### 🧪 Main Programs
+
+#### ▶️ Program 1 – Generate Full Data and Tax Reports
+
+```sql
+-- MainProgram1.sql
+-- Adds 100 revenues + payments + invoices, 100 expenses, and updates all tax reports
+-- Finally, prints summary for 2020
+```
+
+📸 **Add screenshots:**
+
+* After executing the loop that inserts 100 records
+* After `CALL update_tax_report(...)`
+* Output of summary for 2020
+
+---
+
+#### ▶️ Program 2 – Update Invoice Status and Show Top Clients
+
+```sql
+-- MainProgram2.sql
+-- Updates status of all invoices based on payments
+-- Calls function to find clients with total payment > 10000 and their most-used payment source
+```
+
+📸 **Add screenshots:**
+
+* Before and after invoice status updates
+* Results of top clients listing
+
+---
+
+אם את מוכנה – אכין לך את ההמשך של הדו"ח בפורמט Markdown מלא כולל כל הקטעים הנ"ל עם כותרות מוכנות להדבקה. רוצה?
 
 
 ## 👇 Resources
