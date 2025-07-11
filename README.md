@@ -32,6 +32,14 @@ Stage B – Queries and Constraints
  10. Constraints  
  11. Rollback & Commit
 
+📊 Stage C – Integration & Views  
+• Backup and Restore  
+• DSD and ERD Diagrams  
+• Integration Decisions  
+• Integrate.sql Description  
+• Views.sql Description  
+• View Queries and Screenshots  
+
 ---
 
 ## 📘 1. Introduction
