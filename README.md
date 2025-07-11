@@ -159,35 +159,35 @@ Description: Displays how many purchases each user made per month in the past ye
 📍 Query 2 – Products Never Sold
 
 Description: Lists all products that were never part of any purchase.
-![Query 1 ](stage_2/Screenshots/select2.png)
+![Query 2 ](stage_2/Screenshots/select2.png)
 
 
 
 📍 Query 3 – Annual Income Summary
 
 Description: Shows the total income per year based on product quantities and unit prices.
-![Query 1 ](stage_2/Screenshots/select3.png)
+![Query 3 ](stage_2/Screenshots/select3.png)
 
 
 
 📍 Query 4 – Users Who Spent Over 1000 NIS
 
 Description: Lists users whose cumulative spending exceeds 1000 NIS.
-![Query 1 ](stage_2/Screenshots/select4.png)
+![Query 4 ](stage_2/Screenshots/select4.png)
 
 
 
 📍 Query 5 – Last Purchase Date Per User
 
 Description: Retrieves the most recent purchase date for each user.
-![Query 1 ](stage_2/Screenshots/select5.png)
+![Query 5 ](stage_2/Screenshots/select5.png)
 
 
 
 📍 Query 6 – Number of Products Per Category
 
 Description: Displays how many products exist in each category.
-![Query 1 ](stage_2/Screenshots/select6.png)
+![Query 6 ](stage_2/Screenshots/select6.png)
 
 
 
@@ -195,17 +195,17 @@ Description: Displays how many products exist in each category.
 
 Description: Shows products with stock quantity less than 10.
 
-![Query 1 ](stage_2/Screenshots/select7.1.png)
+![Query 7 ](stage_2/Screenshots/select7.1.png)
 
 
-![Query 1 ](stage_2/Screenshots/select7.2.png)
+![Query 7 ](stage_2/Screenshots/select7.2.png)
 
 
 
 📍 Query 8 – Inactive Users in the Last 6 Months
 
 Description: Finds users who haven’t made a purchase in the last 6 months.
-![Query 1 ](stage_2/Screenshots/select8.png)
+![Query 8 ](stage_2/Screenshots/select8.png)
 
 
 
@@ -385,22 +385,21 @@ In this stage, we integrated our **Finance & Accounting** database with another 
 
 We restored the Ticketing system using `pg_restore`, extracted its structure, and imported key tables (`Ticket`, `Passenger`) into our main finance database.
 
-📷 *Add screenshots of:*
-- `backup2` (original)
-- `backup3` (post-integration)
+![Screenshot – Data Import](stage_3/import_data.png)
 
 ---
 
 ## 📐 DSD and ERD Diagrams
 
 ### 📌 DSD – Ticketing System  
-📷 *Insert screenshot of DSD from ERDPlus (Ticket & Passenger)*
+![DSD ticket](stage_3/DSD_אגף_חדש.png)
+
 
 ### 📌 ERD – Ticketing System  
-📷 *Insert screenshot of ERD from reverse engineering*
+![ERD ticket](stage_3/ERD_אגף_חדש.png)
 
 ### 📌 ERD – Integrated (Merged)  
-📷 *Insert screenshot of ERD with Ticket ↔ Payment and Ticket ↔ Passenger*
+![ERD ticket&payment](stage_3/ERD_משולב.png)
 
 ---
 
@@ -445,8 +444,6 @@ FOREIGN KEY (passengerid)
 REFERENCES passenger(passengerid);
 ```
 
-📷 *Optional: Add screenshot from pgAdmin Query Tool showing ALTER TABLE execution*
-
 ---
 
 ## 👁️ Views.sql – Views and Queries
@@ -469,28 +466,13 @@ SELECT
 FROM payment p
 JOIN ticket t ON p.payment_id = t.payment_id;
 ```
-
-📷 *Add screenshot of:*  
-`SELECT * FROM view_payment_summary LIMIT 10;`
-
 ---
 
 #### 🧮 Query A: Credit card payments over 100 NIS
-```sql
-SELECT * 
-FROM view_payment_summary
-WHERE payment_method = 'Credit' AND ticket_price > 100;
-```
-📷 *Insert screenshot of result (up to 5 rows)*
+![view query](stage_3/view1_query1.png)
 
 #### 🧾 Query B: Total income by date
-```sql
-SELECT payment_date, SUM(ticket_price) AS total_income
-FROM view_payment_summary
-GROUP BY payment_date
-ORDER BY payment_date;
-```
-📷 *Insert screenshot of result*
+![view query](stage_3/view1_query2.png)
 
 ---
 
@@ -515,26 +497,13 @@ JOIN ticket t ON ps.passengerid = t.passengerid
 LEFT JOIN payment p ON t.payment_id = p.payment_id;
 ```
 
-📷 *Add screenshot of:*  
-`SELECT * FROM view_passenger_tickets LIMIT 10;`
-
 ---
 
 #### 🧮 Query A: Passengers who paid over 150 NIS
-```sql
-SELECT fullname, email, ticketid, price
-FROM view_passenger_tickets
-WHERE price > 150;
-```
-📷 *Insert screenshot of result*
+![view query](stage_3/view2_query1.png)
 
 #### 🧾 Query B: Ticket count by payment method
-```sql
-SELECT payment_method, COUNT(*) AS num_tickets
-FROM view_passenger_tickets
-GROUP BY payment_method;
-```
-📷 *Insert screenshot of result*
+![view query](stage_3/view2_query2.png)
 
 ---
 
