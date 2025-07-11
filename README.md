@@ -356,43 +356,200 @@ A record was updated and the change was saved using the COMMIT command. Verifyin
 
 Queries.sql, Constraints.sql, RollbackCommit.sql, backup2
 
+---
 
+
+# 📘 Stage C Report – Integration & Views
+**Integration with:** Ticketing & Booking Module
 
 ---
-📊 Stage C Report – Integration & Views
-🧠 Introduction
-In this stage, we integrated our Finance & Accounting database with another project’s Ticketing & Booking system. The integration goal was to allow tracking of ticket purchases in connection with financial payments, creating a unified schema for cross-functional analysis.
 
-🗃️ Backup and Restore
-We restored the other group’s PostgreSQL backup (ticketing module) using pg_restore, and then extracted its structure into a new DSD and ERD using reverse engineering. Afterwards, we imported relevant tables (e.g., Ticket, Passenger) into our main finance database to perform schema integration.
+## 📁 Table of Contents
 
-📷 Add screenshots of backup and restore terminal or pgAdmin
-Files used: backup2 (source) and backup3 (post-integration)
-
-📐 DSD and ERD Diagrams
-📌 DSD – Ticketing System
-📷 Insert screenshot of the new DSD (only tables like Ticket & Passenger used)
-
-📌 ERD – Ticketing System
-📷 Insert screenshot of the ERD from reverse engineering
-
-📌 ERD – Merged ERD
-📷 Insert screenshot of the integrated ERD showing Ticket ↔ Payment
-
-📌 Final DSD – Integrated Schema
-📷 Insert screenshot of the final schema with new foreign keys (e.g., ticket.payment_id)
-
-🧩 Integration Decisions
-Foreign Key Linking:
-We added a new field payment_id to the ticket table to link each ticket to a corresponding payment. The relationship is many-to-one (many tickets can be paid by one payment).
-
-Preserving Original Schemas:
-We did not merge existing tables but added foreign keys to enforce relationships while keeping both domains modular.
-
-Data Import Strategy:
-Instead of rewriting tables, we imported Ticket and Passenger from the other project into our schema using COPY, and updated the integrated schema using ALTER TABLE.
+- Backup and Restore  
+- DSD and ERD Diagrams  
+- Integration Decisions  
+- Integrate.sql Description  
+- Views.sql Description  
+- View Queries and Screenshots  
 
 ---
+
+## 🧠 Introduction
+
+In this stage, we integrated our **Finance & Accounting** database with another project’s **Ticketing & Booking** system. The goal was to create a unified schema to connect financial payments with ticket purchases, allowing for cross-domain analysis and reporting.
+
+---
+
+## 🗃️ Backup and Restore
+
+We restored the Ticketing system using `pg_restore`, extracted its structure, and imported key tables (`Ticket`, `Passenger`) into our main finance database.
+
+📷 *Add screenshots of:*
+- `backup2` (original)
+- `backup3` (post-integration)
+
+---
+
+## 📐 DSD and ERD Diagrams
+
+### 📌 DSD – Ticketing System  
+📷 *Insert screenshot of DSD from ERDPlus (Ticket & Passenger)*
+
+### 📌 ERD – Ticketing System  
+📷 *Insert screenshot of ERD from reverse engineering*
+
+### 📌 ERD – Integrated (Merged)  
+📷 *Insert screenshot of ERD with Ticket ↔ Payment and Ticket ↔ Passenger*
+
+---
+
+## 🧩 Integration Decisions
+
+1. **Linking Ticket to Payment**  
+   We added `payment_id` as a foreign key in the `ticket` table, creating a Many-to-One relationship: multiple tickets may be linked to a single payment.
+
+2. **Preserving Table Structures**  
+   We chose not to merge or recreate tables. Instead, we used `ALTER TABLE` to modify existing ones and enforce foreign keys.
+
+3. **Data Reuse**  
+   `Ticket` and `Passenger` were imported using `COPY FROM` based on a `.csv` export from the partner project. All relevant data was preserved.
+
+---
+
+## 🛠️ Integrate.sql – Schema Modification
+
+```sql
+-- Add payment_id to ticket table
+ALTER TABLE ticket
+ADD COLUMN payment_id INTEGER;
+
+-- Link ticket to payment based on matching amount and date
+UPDATE ticket t
+SET payment_id = p.payment_id
+FROM payment p
+WHERE 
+    t.price = p.amount
+    AND t.purchasedate = p.payment_date;
+
+-- Create FK from ticket to payment
+ALTER TABLE ticket
+ADD CONSTRAINT fk_ticket_payment
+FOREIGN KEY (payment_id)
+REFERENCES payment(payment_id);
+
+-- Create FK from ticket to passenger
+ALTER TABLE ticket
+ADD CONSTRAINT fk_ticket_passenger
+FOREIGN KEY (passengerid)
+REFERENCES passenger(passengerid);
+```
+
+📷 *Optional: Add screenshot from pgAdmin Query Tool showing ALTER TABLE execution*
+
+---
+
+## 👁️ Views.sql – Views and Queries
+
+### 🔹 View 1: `view_payment_summary`
+
+**Description:**  
+Joins payment and ticket tables to show which tickets were paid in which transaction.
+
+```sql
+CREATE OR REPLACE VIEW view_payment_summary AS
+SELECT 
+    p.payment_id,
+    p.payment_method,
+    p.payment_date,
+    p.amount AS payment_amount,
+    t.ticketid,
+    t.price AS ticket_price,
+    t.purchasedate
+FROM payment p
+JOIN ticket t ON p.payment_id = t.payment_id;
+```
+
+📷 *Add screenshot of:*  
+`SELECT * FROM view_payment_summary LIMIT 10;`
+
+---
+
+#### 🧮 Query A: Credit card payments over 100 NIS
+```sql
+SELECT * 
+FROM view_payment_summary
+WHERE payment_method = 'Credit' AND ticket_price > 100;
+```
+📷 *Insert screenshot of result (up to 5 rows)*
+
+#### 🧾 Query B: Total income by date
+```sql
+SELECT payment_date, SUM(ticket_price) AS total_income
+FROM view_payment_summary
+GROUP BY payment_date
+ORDER BY payment_date;
+```
+📷 *Insert screenshot of result*
+
+---
+
+### 🔹 View 2: `view_passenger_tickets`
+
+**Description:**  
+Displays passengers, their purchased tickets, and the payments linked to them.
+
+```sql
+CREATE OR REPLACE VIEW view_passenger_tickets AS
+SELECT 
+    ps.passengerid,
+    ps.fullname,
+    ps.email,
+    t.ticketid,
+    t.purchasedate,
+    t.price,
+    p.payment_method,
+    p.payment_date
+FROM passenger ps
+JOIN ticket t ON ps.passengerid = t.passengerid
+LEFT JOIN payment p ON t.payment_id = p.payment_id;
+```
+
+📷 *Add screenshot of:*  
+`SELECT * FROM view_passenger_tickets LIMIT 10;`
+
+---
+
+#### 🧮 Query A: Passengers who paid over 150 NIS
+```sql
+SELECT fullname, email, ticketid, price
+FROM view_passenger_tickets
+WHERE price > 150;
+```
+📷 *Insert screenshot of result*
+
+#### 🧾 Query B: Ticket count by payment method
+```sql
+SELECT payment_method, COUNT(*) AS num_tickets
+FROM view_passenger_tickets
+GROUP BY payment_method;
+```
+📷 *Insert screenshot of result*
+
+---
+
+## 🗃️ Files in `stage_3/` Git Folder
+
+- `DSD_new.png`
+- `ERD_new.png`
+- `ERD_merged.png`
+- `DSD_merged.png`
+- `Integrate.sql`
+- `Views.sql`
+- `backup3`
+- `README.md` (this file)
+
+
 ## Workshop Outcomes
 
 By the end of this workshop, you will:
