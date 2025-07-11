@@ -208,6 +208,62 @@ Description: Shows products with stock quantity less than 10.
 ![Query 7 ](stage_2/Screenshots/select7.2.png)
 
 
+---
+
+לזהות את **השנה עם ההפסד הכספי הגדול ביותר**:
+* אילו קטגוריות הוצאה גרמו לכך?
+* מה היו מקורות ההכנסה המרכזיים באותה שנה?
+#### 🧱 חלק 1 – זיהוי השנה בה היה ההפסד הכי גדול:
+
+```sql
+WITH DeficitYear AS (
+  SELECT tax_year
+  FROM TaxReport
+  WHERE total_expense > total_revenue
+  ORDER BY (total_expense - total_revenue) DESC
+  LIMIT 1
+)
+```
+
+> יוצרת טבלה זמנית בשם `DeficitYear` שמכילה את השנה שבה ההוצאות היו הכי הרבה מעל ההכנסות.
+
+#### 🧾 חלק 2 – ניתוח ההוצאות באותה שנה לפי קטגוריות:
+
+```sql
+SELECT 
+  E.year,
+  ET.expense_type,
+  SUM(E.amount) AS total_expense_by_type
+FROM Expense E
+JOIN ExpenseTypes ET ON E.type_id = ET.type_id
+WHERE E.year = (SELECT tax_year FROM DeficitYear)
+GROUP BY E.year, ET.expense_type
+ORDER BY total_expense_by_type DESC;
+```
+
+> כאן אנחנו רואים **כמה כסף הוציאה החברה בכל סוג הוצאה** (כמו שכר, תחזוקה, חשמל) – עבור **השנה עם ההפסד הכי גבוה**.
+
+#### 💳 חלק 3 – ניתוח ההכנסות באותה שנה לפי מקור תשלום:
+
+```sql
+SELECT 
+  R.year,
+  PS.source_name,
+  SUM(P.amount) AS total_paid_by_source
+FROM Revenue R
+JOIN Payment P ON R.revenue_id = P.revenue_id
+JOIN PaymentSource PS ON P.source_id = PS.source_id
+WHERE R.year = (SELECT tax_year FROM DeficitYear)
+GROUP BY R.year, PS.source_name
+ORDER BY total_paid_by_source DESC;
+```
+
+> כאן אנחנו רואים **מאיפה הגיע הכסף** – אילו מקורות תשלום הביאו הכי הרבה הכנסות באותה שנה (למשל: אתר, אשראי, קנסות).
+
+
+---
+
+
 
 📍 Query 8 – Inactive Users in the Last 6 Months
 
