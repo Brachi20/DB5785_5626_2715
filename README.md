@@ -32,7 +32,7 @@ Stage B – Queries and Constraints
  10. Constraints  
  11. Rollback & Commit
 
-📊 Stage C – Integration & Views  
+Stage C – Integration & Views  
 • Backup and Restore  
 • DSD and ERD Diagrams  
 • Integration Decisions  
@@ -354,18 +354,45 @@ A record was updated and the change was saved using the COMMIT command. Verifyin
 
 📂 All files used in this stage are located in the folder: stage_2/
 
-Queries.sql
+Queries.sql, Constraints.sql, RollbackCommit.sql, backup2
 
-Constraints.sql
 
-RollbackCommit.sql
-
-backup2
-
-Screenshots for all operations
 
 ---
+📊 Stage C Report – Integration & Views
+🧠 Introduction
+In this stage, we integrated our Finance & Accounting database with another project’s Ticketing & Booking system. The integration goal was to allow tracking of ticket purchases in connection with financial payments, creating a unified schema for cross-functional analysis.
 
+🗃️ Backup and Restore
+We restored the other group’s PostgreSQL backup (ticketing module) using pg_restore, and then extracted its structure into a new DSD and ERD using reverse engineering. Afterwards, we imported relevant tables (e.g., Ticket, Passenger) into our main finance database to perform schema integration.
+
+📷 Add screenshots of backup and restore terminal or pgAdmin
+Files used: backup2 (source) and backup3 (post-integration)
+
+📐 DSD and ERD Diagrams
+📌 DSD – Ticketing System
+📷 Insert screenshot of the new DSD (only tables like Ticket & Passenger used)
+
+📌 ERD – Ticketing System
+📷 Insert screenshot of the ERD from reverse engineering
+
+📌 ERD – Merged ERD
+📷 Insert screenshot of the integrated ERD showing Ticket ↔ Payment
+
+📌 Final DSD – Integrated Schema
+📷 Insert screenshot of the final schema with new foreign keys (e.g., ticket.payment_id)
+
+🧩 Integration Decisions
+Foreign Key Linking:
+We added a new field payment_id to the ticket table to link each ticket to a corresponding payment. The relationship is many-to-one (many tickets can be paid by one payment).
+
+Preserving Original Schemas:
+We did not merge existing tables but added foreign keys to enforce relationships while keeping both domains modular.
+
+Data Import Strategy:
+Instead of rewriting tables, we imported Ticket and Passenger from the other project into our schema using COPY, and updated the integrated schema using ALTER TABLE.
+
+---
 ## Workshop Outcomes
 
 By the end of this workshop, you will:
